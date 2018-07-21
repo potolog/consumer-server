@@ -1,0 +1,30 @@
+info:
+  app:
+    name: 스프링 부트 웹 액추에이터 어플리케이션
+    description: 이 어플리케이션은 MSA 예제입니다.
+    version: 1.0.0
+
+spring:
+  application:
+    name: consumer-server
+
+server:
+  port: 8080
+  servletPath: /
+
+security:
+  basic:
+    # Basic Authentication 을 비활성화 했다.
+    enabled: false
+  oauth2:
+    client:
+      clientId: SampleClientId
+      clientSecret: secret
+      # accessTokenUri 는 Access Tokens 을 얻기 위한 URI 이다.
+      accessTokenUri: http://localhost:8081/auth/oauth/token
+      # userAuthorizationUri 는 사용자들이 리다이렉트될 인가 URI 이다.
+      userAuthorizationUri: http://localhost:8081/auth/oauth/authorize
+    resource:
+      # userInfoUri 는 현재 사용자의 상세정보를 얻기위한 사용자 엔드포인트 URI 이다.
+      userInfoUri: http://localhost:8081/auth/user/me
+

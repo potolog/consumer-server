@@ -6,19 +6,20 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 
-/*
 @Configuration
 @EnableAuthorizationServer
 @EnableResourceServer
-*/
 public class ResourceOAuthSecurityConfiguration extends ResourceServerConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests().antMatchers("/").permitAll();
+        /*
         http.authorizeRequests()
-            .antMatchers("/").permitAll()
-            .antMatchers("/api/**").authenticated()
-            .antMatchers("/books/**").authenticated();
+                .antMatchers("/").permitAll()
+                .antMatchers("/api/**").authenticated()
+                .antMatchers("/books/**").authenticated();
+        */
         /*
         http.authorizeRequests()
             .antMatchers("/").permitAll()
