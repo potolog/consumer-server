@@ -1,4 +1,4 @@
-package com.x3800.consumer.model;
+package com.x3800.consumer.serializer;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;

@@ -1,12 +1,14 @@
 package com.x3800.consumer.model;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.x3800.consumer.serializer.JsonDateTimeSerializer;
 
 import javax.persistence.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
+@Table(name = "consumer")
 public class Consumer {
 
     @Id
@@ -86,9 +88,6 @@ public class Consumer {
         this.regist_datetime = regist_datetime;
     }
 
-    public SimpleDateFormat getFormat() {
-        return format;
-    }
 
     @PrePersist // Auto created date when it's created
     public void prePersist() {
