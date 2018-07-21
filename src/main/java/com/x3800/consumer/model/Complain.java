@@ -20,6 +20,15 @@ public class Complain {
     @Column
     private Date regist_datetime;
 
+    // 타이틀
+    @Column(length = 200, nullable = false)
+    private String title;
+
+    // 내용
+    @Column(length = 8000)
+    private String description;
+
+
     @Transient
     private final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
