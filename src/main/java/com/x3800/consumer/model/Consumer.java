@@ -103,7 +103,6 @@ public class Consumer {
                 ", email='" + email + '\'' +
                 ", telephone='" + telephone + '\'' +
                 ", regist_datetime=" + regist_datetime +
-                ", format=" + format +
                 '}';
     }
 }
